@@ -1,9 +1,11 @@
 body {
   margin: 0;
-  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .title {
@@ -11,18 +13,21 @@ body {
   font-size: 40px;
   font-family: fantasy, sans-serif;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .img-home {
   width: 500px;
   padding: 50px;
+  margin: 0 auto;
+  display: block;
 }
 
 .btn-search {
   background-color: #1ba94c;
   color: #ffffff;
   box-shadow: 0 4px 12px rgb(27 169 76 / 50%);
-  font-size: 18.005px;
+  font-size: 18px;
   padding-left: 1.528em;
   padding-right: 1.528em;
   padding-top: 0;
@@ -30,6 +35,8 @@ body {
   min-height: 2.778em;
   border: none;
   cursor: pointer;
+  margin: 10px 0;
+  display: inline-block;
 }
 
 .btn-search:hover {
@@ -40,6 +47,7 @@ body {
 
 .characters {
   padding: 50px;
+  text-align: center;
 }
 
 .characters h1 {
@@ -48,8 +56,8 @@ body {
 
 .container-characters {
   display: grid;
-  grid-template-columns: auto auto auto;
-  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding-bottom: 50px;
 }
 
@@ -59,6 +67,7 @@ body {
   margin: 20px 10px;
   border-radius: 10px;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 .character-container h3 {
@@ -66,7 +75,7 @@ body {
 }
 
 .character-container h6 {
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -94,6 +103,7 @@ body {
 .character-container div:first-child {
   height: 100%;
 }
+
 .character-container div:last-child {
   text-align: left;
   padding-left: 20px;
@@ -126,24 +136,103 @@ body {
   font-size: 15px;
 }
 
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 @media (max-width: 768px) {
+  .img-home {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .btn-search {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+  }
+
   .characters {
-    padding: 0 20px;
+    padding: 20px;
   }
 
   .container-characters {
-    display: table-cell;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .character-container {
-    width: auto;
-  }
-
-  .character-container {
-    margin: 10px 0;
+    flex-direction: column;
+    width: 100%;
   }
 
   .character-container img {
-    width: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .character-container div:last-child {
+    padding-left: 0;
+  }
+
+  .character-container p {
+    font-size: 14px;
+  }
+
+  .container-episodes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .episode-container {
+    display: flex;
+    flex-direction: column;
+    background: #3c3e44;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .episode-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .episode-container h3 {
+    font-size: 18px;
+  }
+
+  .episode-container p {
+    font-size: 14px;
+  }
+
+  .back-home {
+    font-size: 14px;
   }
 }
